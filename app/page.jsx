@@ -14,7 +14,7 @@ function Home() {
 
             <Header />
 
-<div className="banner">
+<div className={style.banner}>
 
 <Image src="/Banner.png" width={1520} height={520}/>
 

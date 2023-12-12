@@ -30,3 +30,28 @@
       
 
     }
+
+    @media screen and (max-width: 800px) {
+
+        .texto{
+            
+           
+        
+            flex-direction: column;
+        
+            display: flex;
+          
+            margin-left: 14%;
+          
+            margin-top: 20%;
+          
+            font-size: 1.2rem;
+        
+            margin-bottom: 5%;
+
+            width: 65%;        
+        }
+
+
+
+    }
