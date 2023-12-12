@@ -40,7 +40,7 @@ const CPokemon = ({ pokemon }) => {
 
                         <p>Type: {pokemon.types[0].type.name}</p>
 
-                        <p>Habilidades: {pokemon.abilities[0].ability.name}</p>
+                        <p>Abilities: {pokemon.abilities[0].ability.name}</p>
 
 
                     </div>
