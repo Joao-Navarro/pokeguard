@@ -3,7 +3,7 @@
 import Header from '@/components/Header'
 import styles from './page.module.css'
 
-import Integrante from '@/components/Integrantes'
+import Integrante from '@/components/Intregrantes'
 import Footer from '@/components/Footer'
 
 const ImageUrls = [
