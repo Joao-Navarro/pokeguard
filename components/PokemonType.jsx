@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import style from "@/app/pokemon/page.module.css"
+import style from "@/app/tipos/page.module.css"
 
 const CPokemon = ({ pokemon }) => {
 
@@ -38,9 +38,10 @@ const CPokemon = ({ pokemon }) => {
 
                     <div className={style.tamanho}>
 
-                        <p>Height: {pokemon.height}</p>
+                        <p>Type: {pokemon.types[0].type.name}</p>
 
-                        <p>Weight: {pokemon.weight}</p>
+                        <p>Habilidades: {pokemon.abilities[0].ability.name}</p>
+
 
                     </div>
 
