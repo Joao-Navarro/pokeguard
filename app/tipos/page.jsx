@@ -1,198 +1,99 @@
-'use client'
+"use client"
+import Footer from "@/components/Footer"
+import Header from "@/components/Header"
 
-import { useEffect, useState } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import HomeCss from './Home.module.css'
-import Link from 'next/link'
+import CPokemon from "@/components/PokemonType"
+
+import style from "./page.module.css"
+
+import { useState } from "react";
+
+function Pokemon (){
+    
+    
+    const [pokemonName, setPokemonId] = useState("");
+
+    const [pokemon, setPokemon] = useState(null);
+
+    const [error, setError] = useState(null);
 
 
+const getPokemon = async () => {
 
-export default function Home({ pokemones, minimimosDatos, tipos, notFound }) {
+    try {
+
+        const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
 
-    const [filtro, setFiltrar] = useState(minimimosDatos)
+        const data = await resposta.json();
 
-    const filtrar = (elTipo) => {
+        setPokemon(data);
 
-        setFiltrar(minimimosDatos)
-
-        if (elTipo === "borrar") {
-            setFiltrar(minimimosDatos)
-        }
-        else {
-
-            let filtradoPorTypo = minimimosDatos
-                .filter((pokemon) => pokemon.types.some((tipo) => tipo.type.name === elTipo))
-                .map((tem2) => {
-
-                    let nuevosTem = { ...tem2 }
-
-                    return nuevosTem
-                })
-            setFiltrar(filtradoPorTypo)
-
-        }
+        setError(null)
 
     }
 
-    useEffect((context) => {
+    catch (error) {
 
-        const getData = async () => {
-
-
-            const resTipos = await fetch('https://pokeapi.co/api/v2/type')
-        const tipos = await resTipos.json()
-
-        const traemosPokemones = async (porPokemon) => {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${porPokemon}?limit=101&offset=0/`)
-            const data = await response.json()
-
-            return data
-        }
-        let pokemones = []
-        for (let i = 1; i <= 101; i++) {
-            let data = await traemosPokemones(i)
-            pokemones.push(data)
-        }
+        console.error("Erro ao buscar o Pokémon:", error);
 
 
-
-        let minimimosDatos = pokemones.map(pokemon => {
-            return {
-                id: pokemon.id,
-                name: pokemon.name,
-                sprites: pokemon.sprites.other.dream_world.front_default,
-                types: pokemon.types
-            }
-        })
-
-        return {
-            props: {
-                tipos: tipos.results,
-                minimimosDatos,
-
-            },
-        }
+        setError("Falha na busca do Pokemon. Tente Novamente")
 
     }
 
-    getData();
-        }, [])
+};
 
     return (
-        <>
-            <div className={HomeCss.container}>
-                <div className={HomeCss.filtros}>
-                    <button className={`${HomeCss.botonFiltro} ${HomeCss.botonTodos}`} onClick={() => filtrar("borrar")}>
-                        Mostrar todos
-                    </button>
-                    <div className={HomeCss.botones}>
-                        {
-                            tipos.map((tipo, index) => {
+    <>
 
-                                return (
-                                    <button key={tipo.name} className={`${HomeCss.botonFiltro} ${tipo.name}`} aria-label={tipo.name} onClick={() => filtrar(tipo.name)}>
+    <Header/>
 
-                                        {tipo.name}
+    
 
-                                    </button>
-                                )
-                            })
-                        }
+        <div className={style.Pokemon}>
+
+            <h1 className={style.h1pokemon}>Pokémon</h1>
 
 
-                    </div>
-                </div>
+            <div className={style.caixinha}> 
+
+            <input type="text"
+
+                value={pokemonName}
+
+                onChange={(event) => setPokemonId(event.target.value)}
+
+            />
+            </div>
 
 
-                <div className={HomeCss.titulo}>
-                    <h1>Pokemones</h1>
-                </div>
-                <div className={HomeCss.columnas}>
+            <div >
 
-                    <ul>
-                        {filtro ? filtro.map(pokemon => (
-                            <li key={pokemon.id}>
-                                <Link scroll={false} href={{
-                                    pathname: '/pokemon/[name]',
-                                    query: { name: pokemon.name }
-                                }}>
-                                    <a>
-                                        <div className={`${HomeCss.card} ${pokemon.types[0].type.name}`}>
-                                            <div className={HomeCss.nombreTipos}>
+            <button className={style.botao} onClick={getPokemon}>Pegue o Pokémon</button>
 
-                                                <h3 exit={{ opacity: 0 }}>{pokemon.name}</h3>
-
-
-                                                <div className={HomeCss.tipos}>
-                                                    {pokemon.types.map((tipos, index) => {
-                                                        return (
-                                                            <div key={index} className={HomeCss.tipo}>
-                                                                {tipos.type.name}
-                                                            </div>
-                                                        )
-                                                    })}
-                                                </div>
-                                            </div>
-                                            <img
-                                                src={pokemon.sprites}
-                                                alt={pokemon.name}
-                                                width={100}
-                                                height={100}
-                                                className={HomeCss.imagen}
-                                            />
-                                        </div>
-                                    </a>
-
-
-                                </Link>
-                            </li>
-                        )) : 'Cargando...'}
-                    </ul>
-                </div>
-
+            {error && <p style={{ color: "red" }}>{error}</p>}
 
             </div>
-        </>
+
+
+
+            <div className= {style.poke}>
+
+            {pokemon && <CPokemon pokemon={pokemon} />}
+
+            </div>
+
+
+        </div>
+
+        <br></br>
+        <br></br>
+
+    <Footer/>
+    
+    </>
     )
-}                                 
 
-// export async function getStaticProps(context) {
-
-//     const resTipos = await fetch('https://pokeapi.co/api/v2/type')
-//     const tipos = await resTipos.json()
-
-//     const traemosPokemones = async (porPokemon) => {
-//         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${porPokemon}?limit=101&offset=0/`)
-//         const data = await response.json()
-
-//         return data
-//     }
-//     let pokemones = []
-//     for (let i = 1; i <= 101; i++) {
-//         let data = await traemosPokemones(i)
-//         pokemones.push(data)
-//     }
-
-
-
-//     let minimimosDatos = pokemones.map(pokemon => {
-//         return {
-//             id: pokemon.id,
-//             name: pokemon.name,
-//             sprites: pokemon.sprites.other.dream_world.front_default,
-//             types: pokemon.types
-//         }
-//     })
-
-
-
-//     return {
-//         props: {
-//             tipos: tipos.results,
-//             minimimosDatos,
-
-//         },
-//     }
-// }
+}
+export default Pokemon
