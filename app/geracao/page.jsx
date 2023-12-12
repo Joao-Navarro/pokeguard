@@ -53,7 +53,7 @@ const getPokemon = async () => {
 
         <div className={style.Pokemon}>
 
-            <h1 className={style.h1pokemon}>Attack</h1>
+            <h1 className={style.h1pokemon}>Moves</h1>
 
 
             <div className={style.caixinha}> 
