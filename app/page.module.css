@@ -31,6 +31,32 @@
 
     }
 
+    .banner {
+
+        position: relative;
+
+        margin-bottom: 38%;
+
+    }
+
+    .imgBanner {
+
+        width: 1512px!important;
+
+        height: 550px!important;
+
+        position: absolute;
+
+        top: 1;
+
+        bottom: 10;
+    }
+
+
+
+
+
+
     @media screen and (max-width: 800px) {
 
         .texto{
@@ -50,6 +76,27 @@
             margin-bottom: 5%;
 
             width: 65%;        
+        }
+
+        .banner {
+
+            position: relative;
+
+            margin-bottom: 70%;
+
+        }
+
+        .imgBanner {
+
+            width: 415px!important;
+
+            height: 200px!important;
+
+            position: absolute;
+
+            top: 1;
+
+            bottom: 10%;
         }
 
 

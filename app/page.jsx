@@ -16,7 +16,7 @@ function Home() {
 
 <div className={style.banner}>
 
-<Image src="/Banner.png" width={1520} height={520}/>
+<Image className={style.imgBanner} src="/Banner.png" fill sizes="100%,100%"/>
 
 </div>
 
