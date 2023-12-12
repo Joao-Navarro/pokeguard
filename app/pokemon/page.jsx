@@ -8,9 +8,9 @@ import style from "./page.module.css"
 
 import { useState } from "react";
 
-function Pokemon (){
-    
-    
+function Pokemon() {
+
+
     const [pokemonName, setPokemonId] = useState("");
 
     const [pokemon, setPokemon] = useState(null);
@@ -18,81 +18,83 @@ function Pokemon (){
     const [error, setError] = useState(null);
 
 
-const getPokemon = async () => {
+    const getPokemon = async () => {
 
-    try {
+        try {
 
-        const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-
-
-        const data = await resposta.json();
-
-        setPokemon(data);
-
-        setError(null)
-
-    }
-
-    catch (error) {
-
-        console.error("Erro ao buscar o Pokémon:", error);
+            const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
 
-        setError("Falha na busca do Pokemon. Tente Novamente")
+            const data = await resposta.json();
 
-    }
+            setPokemon(data);
 
-};
+            setError(null)
+
+        }
+
+        catch (error) {
+
+            console.error("Erro ao buscar o Pokémon:", error);
+
+
+            setError("Falha na busca do Pokemon. Tente Novamente")
+
+        }
+
+    };
 
     return (
-    <>
+        <>
 
-    <Header/>
-
-    
-
-        <div className={style.Pokemon}>
-
-            <h1 className={style.h1pokemon}>Pokémon</h1>
+            <Header />
 
 
-            <div className={style.caixinha}> 
 
-            <input type="text"
+            <div className={style.Pokemon}>
 
-                value={pokemonName}
+                <h1 className={style.h1pokemon}>Pokémon</h1>
 
-                onChange={(event) => setPokemonId(event.target.value)}
 
-            />
+                <div className={style.caixinha}>
+
+                    <input type="text"
+
+                        placeholder="N° Pokedex or Name"
+
+                        value={pokemonName}
+
+                        onChange={(event) => setPokemonId(event.target.value)}
+
+                    />
+                </div>
+
+
+                <div >
+
+                    <button className={style.botao} onClick={getPokemon}>Pegue o Pokémon</button>
+
+                    {error && <p style={{ color: "red" }}>{error}</p>}
+
+                </div>
+
+
+
+                <div className={style.poke}>
+
+                    {pokemon && <CPokemon pokemon={pokemon} />}
+
+                </div>
+
+
             </div>
 
+            <br></br>
+            <br></br>
 
-            <div >
+            <Footer />
 
-            <button className={style.botao} onClick={getPokemon}>Pegue o Pokémon</button>
-
-            {error && <p style={{ color: "red" }}>{error}</p>}
-
-            </div>
-
-
-
-            <div className= {style.poke}>
-
-            {pokemon && <CPokemon pokemon={pokemon} />}
-
-            </div>
-
-
-        </div>
-
-        <br></br>
-        <br></br>
-
-    <Footer/>
-    
-    </>
+        </>
     )
 
 }

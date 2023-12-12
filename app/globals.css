@@ -15,7 +15,11 @@ body {
   overflow-x: hidden;
 }
 
+input {
 
+  padding: 5px;
+
+}
 
 a {
 

@@ -84,7 +84,7 @@ function Header() {
 
                             <li>
 
-                                <Link href="/geracao" ><p>Geração</p></Link>
+                                <Link href="/geracao" ><p>Attack</p></Link>
 
                             </li>
 
@@ -126,7 +126,7 @@ function Header() {
 
                     <li>
 
-                        <Link href="/geracao" ><p>Geração</p></Link>
+                        <Link href="/geracao" ><p>Attack</p></Link>
 
                     </li>
 

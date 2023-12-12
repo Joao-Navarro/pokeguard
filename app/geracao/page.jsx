@@ -53,12 +53,14 @@ const getPokemon = async () => {
 
         <div className={style.Pokemon}>
 
-            <h1 className={style.h1pokemon}>Pokémon</h1>
+            <h1 className={style.h1pokemon}>Attack</h1>
 
 
             <div className={style.caixinha}> 
 
             <input type="text"
+
+            placeholder="N° Pokedex or Name"
 
                 value={pokemonName}
 
