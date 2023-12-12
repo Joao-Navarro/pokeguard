@@ -1,0 +1,104 @@
+.texto{
+    width: 40%;
+
+    flex-direction: column;
+
+    display: flex;
+  
+    margin-left: 30%;
+  
+    margin-top: 6%;
+  
+    font-size: 1.2rem;
+
+    margin-bottom: 5%;
+  
+ 
+  
+
+}
+
+    .titulo {
+
+        margin: 4% 0;
+
+        width: 100%;
+
+        display: flex;
+      
+        justify-content: center;
+      
+
+    }
+
+    .banner {
+
+        position: relative;
+
+        margin-bottom: 38%;
+
+    }
+
+    .imgBanner {
+
+        width: 1512px!important;
+
+        height: 550px!important;
+
+        position: absolute;
+
+        top: 1;
+
+        bottom: 10;
+    }
+
+
+
+
+
+
+    @media screen and (max-width: 800px) {
+
+        .texto{
+            
+           
+        
+            flex-direction: column;
+        
+            display: flex;
+          
+            margin-left: 14%;
+          
+            margin-top: 20%;
+          
+            font-size: 1.2rem;
+        
+            margin-bottom: 5%;
+
+            width: 65%;        
+        }
+
+        .banner {
+
+            position: relative;
+
+            margin-bottom: 70%;
+
+        }
+
+        .imgBanner {
+
+            width: 415px!important;
+
+            height: 200px!important;
+
+            position: absolute;
+
+            top: 1;
+
+            bottom: 10%;
+        }
+
+
+
+    }
