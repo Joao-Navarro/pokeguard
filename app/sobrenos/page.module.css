@@ -1,0 +1,104 @@
+.title {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin: 4%;
+
+    width: 100%;
+
+    margin-bottom: 0;
+}
+
+.title h1 {
+
+    font-size: 6rem;
+    
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    width: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.container .card {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background-color: #fff0;
+    margin: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.container .card:hover {
+    height: 500px;
+    background-color: #ccc9dc;
+}
+
+.container .card .imgBx {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: 15px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .card .imgBx img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.container .card .imgBx img:hover {
+
+    cursor: pointer;
+
+}
+
+.container .card .content {
+    position: relative;
+    margin-top: -110px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 15px;
+    transition-delay: 0.3s;
+}
+
+@media screen and (max-width: 800px) {
+
+    .title h1 {
+
+        font-size: 4rem;
+
+    }
+
+    .container {
+
+        width: 400px;
+
+    }
+
+}
