@@ -37,136 +37,108 @@ function Header() {
         <>
 
 
-                <div className="headerBox">
+            <div className="headerBox">
 
-                    <nav>
+                <nav>
 
-                        <div className="header">
+                    <div className="header">
 
-                            <Link href="./"><Image
-                            
-                            
-                            src={"/logoPokeguard.png"}
+                        <Link href="./">
 
-                            alt="Logo Pokeguard"
+                            <Image
 
-                            width={380}
 
-                            height={150}
+                                src={"/logoPokeguard.png"}
 
-                            
+                                alt="Logo Pokeguard"
+
+                                width={380}
+
+                                height={150}
+
+
                             />
-                                
-                                
-
-                            </Link>
-
-                           
-
-                        </div>
-
-                        <div className="nav-header">
-
-                            <ul>
-                                <li>
-
-                                    <Link href="/pokemon" ><p>Ache seu Pokémon</p> </Link>
-
-                                </li>
-
-                                <li>
-
-                                    <Link href="/tipos" ><p>Tipos </p> </Link>
-
-                                </li>
-
-                                <li>
-
-                                    <Link href="/geracao" ><p>Geração</p></Link>
-
-                                </li>
-
-                                <li>
-
-                                    <Link href="/sobrenos" > <p>Sobre Nós</p> </Link>
-
-                                </li>
 
 
-                            </ul>
 
-                        </div>
+                        </Link>
 
 
-                        <div className="mobile-menu-icon">
 
-                            <button onClick={menuShow} className="btn-icon"><Image className="icon" src="/menuIcon.png" alt="Menu Icon" width={20} height={20} /></button>
+                    </div>
 
-                        </div>
-                    </nav>
+                    <div className="nav-header">
 
-                </div>
+                        <ul>
+                            <li>
 
-                <div className="mobile-menu">
+                                <Link href="/pokemon" ><p>Ache seu Pokémon</p> </Link>
 
-                    <ul>
-                        <li>
+                            </li>
 
-                            <Link href="/romantismo" >Romantismo </Link>
+                            <li>
 
-                        </li>
+                                <Link href="/tipos" ><p>Tipos </p> </Link>
 
-                        <li>
+                            </li>
 
-                            <Link href="/abstracionismo" > Abstracionismo </Link>
+                            <li>
 
-                        </li>
+                                <Link href="/geracao" ><p>Geração</p></Link>
 
-                        <li>
+                            </li>
 
-                            <Link href="/renascimento" >Renascimento</Link>
+                            <li>
 
-                        </li>
+                                <Link href="/sobrenos" > <p>Sobre Nós</p> </Link>
 
-                        <li>
+                            </li>
 
-                            <Link href="/barroco" > Barroco </Link>
 
-                        </li>
+                        </ul>
 
-                        <li>
+                    </div>
 
-                            <Link href="/impressionismo" >Impressionismo </Link>
 
-                        </li>
+                    <div className="mobile-menu-icon">
 
-                        <li>
+                        <button onClick={menuShow} className="btn-icon"><Image className="icon" src="/menuIcon.png" alt="Menu Icon" width={20} height={20} /></button>
 
-                            <Link href="/neoclassicismo" > Neoclassicismo</Link>
+                    </div>
+                </nav>
 
-                        </li>
+            </div>
 
-                        <li>
+            <div className="mobile-menu">
 
-                            <Link href="/rococo" >Rococó</Link>
+                <ul>
+                    <li>
 
-                        </li>
+                        <Link href="/pokemon" ><p>Ache seu Pokémon</p> </Link>
 
-                        <li>
+                    </li>
 
-                            <Link href="/realismo" > Realismo </Link>
+                    <li>
 
-                        </li>
+                        <Link href="/tipos" ><p>Tipos </p> </Link>
 
-                        <li>
+                    </li>
 
-                            <Link href="/sobrenos" > Sobre Nós </Link>
+                    <li>
 
-                        </li>
-                        
-                    </ul>
+                        <Link href="/geracao" ><p>Geração</p></Link>
 
-                </div>
+                    </li>
+
+                    <li>
+
+                        <Link href="/sobrenos" > <p>Sobre Nós</p> </Link>
+
+                    </li>
+
+                </ul>
+
+            </div>
 
 
         </>

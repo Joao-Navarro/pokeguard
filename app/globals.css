@@ -55,9 +55,9 @@ a {
 
   justify-content: center;
 
-  width: 30%;
+  width: 20%;
 
-  margin-left: 3%;
+  margin-left: 0%;
 
 }
 
@@ -110,7 +110,7 @@ ul {
 
   list-style-type: none;
 
-  width: 80%;
+  width: 70%;
 
 }
 
@@ -315,7 +315,7 @@ Link {
 
   .mobile-menu ul {
 
-    background-color: #0c1821;
+    background-color: #99D6EA;
 
     display: flex;
 
