@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 
 const ImageUrls = [
 
-    { img: "/joao.png", nome: "João Navarro", idade: "16", posicao: "Tech Lid" },
+    { img: "/joao.png", nome: "João Navarro", idade: "16", posicao: "Tech Lead" },
 
     { img: "/davi.png", nome: "Davi Marcelino", idade: "16", posicao: "Auxiliar" },
 
