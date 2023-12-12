@@ -2,7 +2,7 @@
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
-import CPokemon from "@/components/Pokemon"
+import CPokemon from "@/components/PokemonHp"
 
 import style from "./page.module.css"
 

@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import style from "@/app/pokemon/page.module.css"
+import style from "@/app/geracao/page.module.css"
 
 const CPokemon = ({ pokemon }) => {
 
@@ -38,9 +38,20 @@ const CPokemon = ({ pokemon }) => {
 
                     <div className={style.tamanho}>
 
-                        <p>Height: {pokemon.height}</p>
+                        <p>HP: {pokemon.stats[0].base_stat}</p> 
 
-                        <p>Weight: {pokemon.weight}</p>
+                        <p>Attack: {pokemon.stats[1].base_stat}</p>
+
+                        <p>Defense: {pokemon.stats[2].base_stat}</p>
+
+                        <p>Special-Attack: {pokemon.stats[3].base_stat}</p>
+
+                        <p>Special-Defense: {pokemon.stats[4].base_stat}</p>
+
+                        <p>Speed: {pokemon.stats[5].base_stat}</p>
+
+
+
 
                     </div>
 
