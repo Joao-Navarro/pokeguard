@@ -36,7 +36,7 @@ function Footer() {
 
                         <li>
 
-                            <Link href="/geracao" >Attack</Link>
+                            <Link href="/geracao" >Moves</Link>
 
                         </li>
 
