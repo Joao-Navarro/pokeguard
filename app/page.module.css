@@ -35,15 +35,15 @@
 
         position: relative;
 
-        margin-bottom: 38%;
+        margin-bottom: 47%;
 
     }
 
     .imgBanner {
 
-        width: 1512px!important;
+        width: 100%!important;
 
-        height: 550px!important;
+        height: 650px!important;
 
         position: absolute;
 
@@ -88,7 +88,7 @@
 
         .imgBanner {
 
-            width: 415px!important;
+            width: 100%!important;
 
             height: 200px!important;
 
@@ -96,7 +96,7 @@
 
             top: 1;
 
-            bottom: 10%;
+            bottom: 1%;
         }
 
 
